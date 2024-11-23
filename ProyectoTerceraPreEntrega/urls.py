@@ -20,6 +20,6 @@ from ProyectoTerceraPreEntrega.views import saludo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('saludo/', saludo, '''name='saludo' '''), #cual sería la función de name='saludo'??
+    path('saludo/', saludo), #'''name='saludo' '''cual sería la función de name='saludo'??
     
 ]
