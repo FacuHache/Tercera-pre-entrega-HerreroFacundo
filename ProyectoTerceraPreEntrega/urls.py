@@ -16,10 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ProyectoTerceraPreEntrega.views import saludo
+from ProyectoTerceraPreEntrega.views import saludo, ver_equipo_titular, ingresar_fecha_partido, faltan_x_dias, probando_template
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludo/', saludo), #'''name='saludo' '''cual sería la función de name='saludo'??
+    path('ver_equipo_titular/', ver_equipo_titular),
+    path('ingresar_fecha_partido/', ingresar_fecha_partido),
+    path('faltan_x_dias/', faltan_x_dias),
+    path('probando_template/', probando_template),
+    #en minúscula:
+#    path('INGRESAR_JUGADOR/', INGRESAR_JUGADOR), #esta ruta aún no existe en views.py
+#    path('ACTUALIZAR_JUGADOR/', ACTUALIZAR_JUGADOR),
     
 ]

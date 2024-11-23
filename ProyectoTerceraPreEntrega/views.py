@@ -49,3 +49,27 @@ def faltan_x_dias (request, fecha):
     fecha_proxima = date(fecha) # ingresar en formato "2024, 3, 15" fecha de prox partido
     diferencia = fecha_proxima - date.today()
     return HttpResponse(f'Faltan {diferencia.days} días para el partido')
+
+
+#DEFINIENDO EL TEMPLATE (verificar que esté en la carpeta correcta, en el módulo correcto views)
+# Agregamos al encabezado del archivo el import de Template y de Context
+from django.template import Template, Context
+
+def probando_template(request):
+
+    # Abrimos el archivo html
+    mi_html = open('ProyectoTerceraPreEntrega\Plantillas\Template1.html')
+
+    # Creamos el template haciendo uso de la clase Template
+    plantilla = Template(mi_html.read())
+
+    # Cerramos el archivo previamente abierto, ya que lo tenemos cargado en la variable plantilla
+    mi_html.close()
+
+    # Creamos un contexto, más adelante vamos a aprender a usarlo, ahora lo necesitamos aunque sea vacío para que funcione
+    mi_contexto = Context()
+
+    # Terminamos de construír el template renderizándolo con su contexto
+    documento = plantilla.render(mi_contexto)
+
+    return HttpResponse(documento)
