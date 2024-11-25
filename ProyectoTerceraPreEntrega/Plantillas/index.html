@@ -3,13 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página Principal</title>
+    <style>
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        /* Contenedor principal */
+        .container {
+            margin-top: 50px;
+        }
+
+        /* Botones */
+        .button {
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Efecto hover */
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <br>
-    <p>
-    -Acá irían los botones con las opciones de las views-</p>
-    <br><button id="btn1">Opción 1</button>
-    <br><p>-o sólo iría el codigo del template lo que se vé ???-</p>
+    <div class="container">
+        <h1>Bienvenido</h1>
+        <p>Selecciona una opción:</p>
+        <a href="{% url 'ver_equipo_titular' %}" class="button">Ver equipo titular</a>
+        <a href="{% url 'ingresar_fecha_partido' %}" class="button">Ingresar fecha del próximo partido</a>
+        <a href="{% url 'faltan_x_dias' %}" class="button">Cuantos días faltan</a>
+        <a href="{% url 'agregar_jugador' %}" class="button">Agregar jugador</a>
+        <a href="{% url 'quitar_jugador' %}" class="button">Quitar jugador</a>
+    </div>
 </body>
 </html>

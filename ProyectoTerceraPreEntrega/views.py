@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from datetime import date
 from datetime import timedelta
 
+#DEFINIENDO EL TEMPLATE (verificar que esté en la carpeta correcta, en el módulo correcto views)
+# Agregamos al encabezado del archivo el import de Template y de Context
+from django.template import Template, Context
+
 #page ppal (agregar botones de inicio con las views opcionales, esto es para el inicio.)
 #se harían los botones para cada una de las opciones
 #es acá o en donde??
@@ -31,7 +35,7 @@ def segunda_vista (request):
 def ver_equipo_titular(request, fecha):
     #llamada a la base de datos
     #consultar estado del equipo titular para la proxima fecha
-    return HttpResponse('Hola crack 3')
+    return HttpResponse('Este es el equipo titular')
 
 
 #método n°3: ingresar fechas de partidos a la DB
@@ -50,12 +54,13 @@ def faltan_x_dias (request, fecha):
     diferencia = fecha_proxima - date.today()
     return HttpResponse(f'Faltan {diferencia.days} días para el partido')
 
+def agregar_jugador (request):
+    return HttpResponse('Jugador agregado')
 
-#DEFINIENDO EL TEMPLATE (verificar que esté en la carpeta correcta, en el módulo correcto views)
-# Agregamos al encabezado del archivo el import de Template y de Context
-from django.template import Template, Context
+def quitar_jugador (request):
+    return HttpResponse('Jugador eliminado')
 
-def probando_template(request):
+def template_index(request):
 
     # Abrimos el archivo html
     mi_html = open('ProyectoTerceraPreEntrega\Plantillas\index.html')

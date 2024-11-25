@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ProyectoTerceraPreEntrega.views import saludo, ver_equipo_titular, ingresar_fecha_partido, faltan_x_dias, probando_template
+from ProyectoTerceraPreEntrega.views import saludo, ver_equipo_titular, ingresar_fecha_partido, faltan_x_dias, template_index, agregar_jugador, quitar_jugador
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,7 +24,9 @@ urlpatterns = [
     path('ver_equipo_titular/', ver_equipo_titular),
     path('ingresar_fecha_partido/', ingresar_fecha_partido),
     path('faltan_x_dias/', faltan_x_dias),
-    path('probando_template/', probando_template),
+    path('template_index/', template_index),
+    path('agregar_jugador/', agregar_jugador),
+    path('quitar_jugador/', quitar_jugador),
     #en minúscula:
 #    path('INGRESAR_JUGADOR/', INGRESAR_JUGADOR), #esta ruta aún no existe en views.py
 #    path('ACTUALIZAR_JUGADOR/', ACTUALIZAR_JUGADOR),
