@@ -23,7 +23,7 @@
         .button {
             display: inline-block;
             width: 200px;
-            height: 50px;
+            height: 100px;
             margin: 10px;
             background-color: #007bff;
             color: white;
@@ -44,13 +44,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>Bienvenido</h1>
+        <h1>Welcome Crack</h1>
         <p>Selecciona una opción:</p>
-        <a href="{% url 'ver_equipo_titular' %}" class="button">Ver equipo titular</a>
+        <a href="{% url 'ver_equipo_titular' %}" class="button">Ver equipo titular hasta la fecha</a>
         <a href="{% url 'ingresar_fecha_partido' %}" class="button">Ingresar fecha del próximo partido</a>
-        <a href="{% url 'faltan_x_dias' %}" class="button">Cuantos días faltan</a>
-        <a href="{% url 'agregar_jugador' %}" class="button">Agregar jugador</a>
-        <a href="{% url 'quitar_jugador' %}" class="button">Quitar jugador</a>
+        <a href="{% url 'faltan_x_dias' %}" class="button">Cuantos días faltan para el próximo partido</a>
+        <a href="{% url 'agregar_jugador' %}" class="button">Agregar jugador al equipo titular</a>
+        <a href="{% url 'quitar_jugador' %}" class="button">Quitar jugador del equipo titular</a>
     </div>
 </body>
 </html>

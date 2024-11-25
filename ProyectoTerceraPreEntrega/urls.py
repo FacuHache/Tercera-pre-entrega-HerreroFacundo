@@ -21,12 +21,12 @@ from ProyectoTerceraPreEntrega.views import saludo, ver_equipo_titular, ingresar
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludo/', saludo), #'''name='saludo' '''cual sería la función de name='saludo'??
-    path('ver_equipo_titular/', ver_equipo_titular),
-    path('ingresar_fecha_partido/', ingresar_fecha_partido),
-    path('faltan_x_dias/', faltan_x_dias),
-    path('template_index/', template_index),
-    path('agregar_jugador/', agregar_jugador),
-    path('quitar_jugador/', quitar_jugador),
+    path('ver_equipo_titular/', name ='ver_equipo_titular', view= ver_equipo_titular),
+    path('ingresar_fecha_partido/', name = 'ingresar_fecha_partido', view= ingresar_fecha_partido),
+    path('faltan_x_dias/', name = 'faltan_x_dias', view= faltan_x_dias),
+    path('template_index/', name = 'template_index', view= template_index),
+    path('agregar_jugador/', name = 'agregar_jugador', view= agregar_jugador),
+    path('quitar_jugador/', name = 'quitar_jugador', view= quitar_jugador),
     #en minúscula:
 #    path('INGRESAR_JUGADOR/', INGRESAR_JUGADOR), #esta ruta aún no existe en views.py
 #    path('ACTUALIZAR_JUGADOR/', ACTUALIZAR_JUGADOR),

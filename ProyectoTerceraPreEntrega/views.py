@@ -14,7 +14,7 @@ from django.template import Template, Context
 #Y PARECE QUE FALTA LA CARPETA "MI_APP" PARA DEFINIR EL INDEX.HTML AHÍ MISMO ruta:
 #mi_app/templates/index.html (verificar) ! ! ! 
 def index(request):
-    return HttpResponse("parece que acá no va el index - Esta es la página principal")
+    return HttpResponse("parece que acá no va el index - Esta es la página principal? es el index.html creado en la raíz?")
 
 #se podría agregar un button / método para ver el calendario
 #esta función es para mostrar el calendario
@@ -32,7 +32,7 @@ def segunda_vista (request):
 #método n°2: consultar estado del equipo titular para la proxima fecha
 # definir una vista que reciba un parámetro
 
-def ver_equipo_titular(request, fecha):
+def ver_equipo_titular(request):
     #llamada a la base de datos
     #consultar estado del equipo titular para la proxima fecha
     return HttpResponse('Este es el equipo titular')
