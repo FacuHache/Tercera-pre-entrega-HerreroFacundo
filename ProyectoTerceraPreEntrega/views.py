@@ -58,7 +58,7 @@ from django.template import Template, Context
 def probando_template(request):
 
     # Abrimos el archivo html
-    mi_html = open('ProyectoTerceraPreEntrega\Plantillas\Template1.html')
+    mi_html = open('ProyectoTerceraPreEntrega\Plantillas\index.html')
 
     # Creamos el template haciendo uso de la clase Template
     plantilla = Template(mi_html.read())
