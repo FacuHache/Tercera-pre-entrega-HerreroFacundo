@@ -5,7 +5,7 @@ from datetime import timedelta
 
 #DEFINIENDO EL TEMPLATE (verificar que esté en la carpeta correcta, en el módulo correcto views)
 # Agregamos al encabezado del archivo el import de Template y de Context
-from django.template import Template, Context
+from django.template import Template, Context, loader
 
 #page ppal (agregar botones de inicio con las views opcionales, esto es para el inicio.)
 #se harían los botones para cada una de las opciones
@@ -62,7 +62,7 @@ def quitar_jugador (request):
     return HttpResponse('Jugador eliminado')
 
 def template_index(request):
-
+    '''
     # Abrimos el archivo html
     mi_html = open('.\ProyectoTerceraPreEntrega\Plantillas\index.html')
 
@@ -77,5 +77,11 @@ def template_index(request):
 
     # Terminamos de construír el template renderizándolo con su contexto
     documento = plantilla.render(mi_contexto)
-
+    '''
+    diccionario = {}
+    
+    plantilla = loader.get_template('index.html')
+    
+    documento = plantilla.render(diccionario)
+    
     return HttpResponse(documento)
