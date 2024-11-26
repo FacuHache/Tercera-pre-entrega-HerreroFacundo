@@ -51,6 +51,7 @@ def ingresar_fecha_partido(request, fecha):
 #recibe un parámetro ingresado por usuario o consultado a la DB
 def faltan_x_dias (request, fecha): 
     fecha_proxima = date(fecha) # ingresar en formato "2024, 3, 15" fecha de prox partido
+    # o ver si se despliega automaticamente para elegir la fecha a ingresar
     diferencia = fecha_proxima - date.today()
     return HttpResponse(f'Faltan {diferencia.days} días para el partido')
 
@@ -63,7 +64,7 @@ def quitar_jugador (request):
 def template_index(request):
 
     # Abrimos el archivo html
-    mi_html = open('ProyectoTerceraPreEntrega\Plantillas\index.html')
+    mi_html = open('.\ProyectoTerceraPreEntrega\Plantillas\index.html')
 
     # Creamos el template haciendo uso de la clase Template
     plantilla = Template(mi_html.read())
