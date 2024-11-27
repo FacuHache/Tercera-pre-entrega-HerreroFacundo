@@ -42,17 +42,19 @@ class Jugador(models.Model):
 
 # equipo titular OP 1
 # debería estar relacionado con el jugador
-class Equipo_Titular(models.Model):
-    jugador = models.ForeignKey(Jugador, on_delete=models.CASCADE)
-    fecha = models.ForeignKey(Fecha, on_delete=models.CASCADE)
-    class Meta:
-        verbose_name = 'equipo titular'
-        verbose_name_plural = 'equipos titulares'
-        #ordenar por nombre de jugador
-        ordering = ['jugador.nombre'] # verificar que el campo exista para ordenar correctamente
+# class Equipo_Titular1(models.Model):
+#     jugador = models.ForeignKey(Jugador, on_delete=models.CASCADE)
+#     fecha = models.ForeignKey(Fecha, on_delete=models.CASCADE)
+#     # jugador = models.ForeignKey(Jugador, on_delete=models.CASCADE)
+#     # fecha = models.ForeignKey(Fecha, on_delete=models.CASCADE)
+#     class Meta:
+#         verbose_name = 'equipo titular'
+#         verbose_name_plural = 'equipos titulares'
+#         #ordenar por nombre de jugador
+#         ordering = ['jugador.nombre'] # verificar que el campo exista para ordenar correctamente
 
 # equipo titular OP 2
-class Equipo_Titular(models.Model):
+class Equipo_Titular2(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.TextField()
     # imagen = models.ImageField(upload_to='equipos')

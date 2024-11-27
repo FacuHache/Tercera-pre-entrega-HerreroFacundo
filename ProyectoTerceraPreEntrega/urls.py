@@ -15,8 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from ProyectoTerceraPreEntrega.views import saludo, ver_equipo_titular, ingresar_fecha_partido, faltan_x_dias, template_index, agregar_jugador, quitar_jugador # type: ignore
+from AppBBDD import urls, views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,8 +34,8 @@ urlpatterns = [
     path('template_index/', name = 'template_index', view= template_index),
     path('agregar_jugador/', name = 'agregar_jugador', view= agregar_jugador),
     path('quitar_jugador/', name = 'quitar_jugador', view= quitar_jugador),
-    #en minúscula:
-#    path('INGRESAR_JUGADOR/', INGRESAR_JUGADOR), #esta ruta aún no existe en views.py
-#    path('ACTUALIZAR_JUGADOR/', ACTUALIZAR_JUGADOR),
     
-]
+    path('AppBBDD/', include('AppBBDD.urls')),
+    # Incluye las URLs de tu aplicación
+    
+] 
