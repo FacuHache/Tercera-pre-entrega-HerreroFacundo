@@ -20,6 +20,7 @@ from ProyectoTerceraPreEntrega.views import saludo, ver_equipo_titular, ingresar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', template_index, name='inicio'),
     path('saludo/', saludo), #'''name='saludo' '''cual sería la función de name='saludo'??
 # ya entendí que el name en el path es unico para que pueda ser llamado en el template,
 # sería desde los 'template' 'plantillas' desde la carpeta 'Plantillas', o desde cualquier
