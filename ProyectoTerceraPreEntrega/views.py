@@ -7,14 +7,6 @@ from datetime import timedelta
 # Agregamos al encabezado del archivo el import de Template y de Context
 from django.template import Template, Context, loader
 
-#page ppal (agregar botones de inicio con las views opcionales, esto es para el inicio.)
-#se harían los botones para cada una de las opciones
-#es acá o en donde??
-#POR LO QUE VEO LOS BOTONES PARA LAS VISTAS VAN EL MÓDULO INDEX.HTML
-#Y PARECE QUE FALTA LA CARPETA "MI_APP" PARA DEFINIR EL INDEX.HTML AHÍ MISMO ruta:
-#mi_app/templates/index.html (verificar) ! ! ! 
-def index(request):
-    return HttpResponse("parece que acá no va el index - Esta es la página principal? es el index.html creado en la raíz?")
 
 #se podría agregar un button / método para ver el calendario
 #esta función es para mostrar el calendario
@@ -24,21 +16,17 @@ def index(request):
 def saludo (request):
     return HttpResponse('Hola crack!')
 
-#metodo n°1
-#definiendo una segunda vista... esta podría asignarse a uno de los buttons de la página principal
-def segunda_vista (request):
-    return HttpResponse('Hola crack 2')
 
-#método n°2: consultar estado del equipo titular para la proxima fecha
+#método n°1: consultar estado del equipo titular para la proxima fecha
 # definir una vista que reciba un parámetro
-
+# por donde recibe el parámetro, por url?
 def ver_equipo_titular(request):
     #llamada a la base de datos
     #consultar estado del equipo titular para la proxima fecha
     return HttpResponse('Este es el equipo titular')
 
 
-#método n°3: ingresar fechas de partidos a la DB
+#método n°2: ingresar fechas de partidos a la DB
 #definir una vista que reciba un parámetro
 def ingresar_fecha_partido(request, fecha):
     #llamada a la base de datos
@@ -46,7 +34,7 @@ def ingresar_fecha_partido(request, fecha):
     #usar if o try except por si la fecha no existe o es mal ingresada
     return HttpResponse('Fecha ingresada') #'''así???'''
 
-#método n°4: con la función date comparar y devolver cuantos días faltan para la proxima fecha de partido
+#método n°3: con la función date comparar y devolver cuantos días faltan para la proxima fecha de partido
 
 #recibe un parámetro ingresado por usuario o consultado a la DB
 def faltan_x_dias (request, fecha): 

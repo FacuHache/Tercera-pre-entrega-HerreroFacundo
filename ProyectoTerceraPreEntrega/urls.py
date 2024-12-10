@@ -19,6 +19,7 @@ from django.urls import path
 from ProyectoTerceraPreEntrega.views import saludo, ver_equipo_titular, ingresar_fecha_partido, faltan_x_dias, template_index, agregar_jugador, quitar_jugador # type: ignore
 
 urlpatterns = [
+    path('', template_index, name='index'),
     path('admin/', admin.site.urls),
     path('saludo/', saludo), #'''name='saludo' '''cual sería la función de name='saludo'??
 # ya entendí que el name en el path es unico para que pueda ser llamado en el template,
@@ -29,7 +30,7 @@ urlpatterns = [
     path('ver_equipo_titular/', name ='ver_equipo_titular', view= ver_equipo_titular),
     path('ingresar_fecha_partido/', name = 'ingresar_fecha_partido', view= ingresar_fecha_partido),
     path('faltan_x_dias/', name = 'faltan_x_dias', view= faltan_x_dias),
-    path('template_index/', name = 'template_index', view= template_index),
+#    path('template_index/', name = 'index', view= template_index),
     path('agregar_jugador/', name = 'agregar_jugador', view= agregar_jugador),
     path('quitar_jugador/', name = 'quitar_jugador', view= quitar_jugador),
     #en minúscula:
