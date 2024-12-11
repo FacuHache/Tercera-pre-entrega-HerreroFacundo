@@ -15,26 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from ProyectoTerceraPreEntrega.views import saludo, ver_equipo_titular, ingresar_fecha_partido, faltan_x_dias, template_index, agregar_jugador, quitar_jugador # type: ignore
+from django.urls import path, include
+from ProyectoTerceraPreEntrega.views import template_index
+# from ProyectoTerceraPreEntrega.views import saludo, ver_equipo_titular, ingresar_fecha_partido, faltan_x_dias, template_index, agregar_jugador, quitar_jugador # type: ignore
+# esta es otra forma de importar las views, from al archivo views import view_1, view_2, etc
+from AppBBDD import urls, views
 
 urlpatterns = [
     path('', template_index, name='index'),
+    # OJO OJO ! cuando pases las views de acá a AppBBDD.views,
+    # que el archivo index.html va a quedar en la carpeta Plantillas del
+    # ProyectoPrincipal 'ProyectoTerceraPreEntrega'
+    # este path también hay que mandarlo a AppBDD.urls ???
+    # o al ser la página de inicio puede o debe quedar donde está ¿
     path('admin/', admin.site.urls),
-    path('saludo/', saludo), #'''name='saludo' '''cual sería la función de name='saludo'??
-# ya entendí que el name en el path es unico para que pueda ser llamado en el template,
-# sería desde los 'template' 'plantillas' desde la carpeta 'Plantillas', o desde cualquier
-# parte del proyecto?
-# y creo que es para que Django lo pueda identificar en el template al momento ir a buscar
-# la 'función' 'view' requerida
-    path('ver_equipo_titular/', name ='ver_equipo_titular', view= ver_equipo_titular),
-    path('ingresar_fecha_partido/', name = 'ingresar_fecha_partido', view= ingresar_fecha_partido),
-    path('faltan_x_dias/', name = 'faltan_x_dias', view= faltan_x_dias),
-#    path('template_index/', name = 'index', view= template_index),
-    path('agregar_jugador/', name = 'agregar_jugador', view= agregar_jugador),
-    path('quitar_jugador/', name = 'quitar_jugador', view= quitar_jugador),
-    #en minúscula:
-#    path('INGRESAR_JUGADOR/', INGRESAR_JUGADOR), #esta ruta aún no existe en views.py
-#    path('ACTUALIZAR_JUGADOR/', ACTUALIZAR_JUGADOR),
-    
+    path('AppBBDD/', include('AppBBDD.urls')),
 ]
